@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shaun's Virtual CV</title>
     <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+
 </head>
 <body>
 <!-- Header Section-->
@@ -21,7 +23,6 @@
                     <li><a href = "#home" class = "nav-link active"> Home</a></li>
                     <li><a href = "#about" class = "nav-link"> About Me</a></li>
                     <li><a href = "#resume" class = "nav-link"> Resume</a></li>
-                    <li><a href = "#skills" class = "nav-link"> Skills</a></li>
                     <li><a href = "#projects" class = "nav-link"> Projects</a></li>
                     <li><a href = "#contact" class = "nav-link"> Contact Me</a></li>
                 </ul>
@@ -73,18 +74,112 @@
     </section>
 
     <!-- Resume Section-->
-    <section id = "resume">
+    <section id = "resume" class = "resume-section">
+        <h2>Resume</h2>
+
+        <div class="resume-subsection">
+            <h3>Academic Background</h3>
+            <div class="resume-entry">
+                <h4>BSc in Information Technology</h4>
+                <h5>North-West University</h5>
+                <p>2022 - Present</p>
+            </div>
+            <div class="resume-entry">
+                <h4>National Senior Certificate (Matric)</h4>
+                <h5>Phafane Senior Secondary School</h5>
+                <p>2021</p>
+            </div>
+        </div>
+
+        <div class="resume-subsection">
+            <h3>Experience</h3>
+            <div class="resume-entry">
+                <h4>Student Assistant</h4>
+                <h5>North-West University</h5>
+                <p>Feb 2024 - June 2025</p>
+                <ul>
+                    <li>Supported students in C# and .ASP.NET with Visual Studio</li>
+                    <li>Marked and gave feedback on UI programming assignments</li>
+                    <li>Answered lab questions and helped students debug projects</li>
+                </ul>
+            </div>
+            <div class="resume-entry">
+                <h4>Cyber Café Admin</h4>
+                <h5>Local Internet Café</h5>
+                <p>April 2019 – Dec 2019</p>
+                <ul>
+                  <li>Helped customers with printing, scanning, and MS Office tools.</li>
+                  <li>Resolved basic IT issues and improved the customer experience.</li>
+                </ul>
+              </div>
+        </div>
+
+        <div class="resume-subsection">
+            <h3>Technical Skills & Soft Skills & </h3>
+          
+            <div class="resume-entry skills-icons">
+              <!-- Technical Skills -->
+              <div class="skills-icons">
+                <div class="skill-icon" title="Python">
+                  <i class="fab fa-python"></i>
+                  <span>Python</span>
+                </div>
+                <div class="skill-icon" title="Java (OOP)">
+                  <i class="fab fa-java"></i>
+                  <span>Java</span>
+                </div>
+
+                <div class="skill-icon" title="GitHub">
+                  <i class="fab fa-github"></i>
+                  <span>GitHub</span>
+                </div>
+                
+                  <div class="skill-icon" title="HTML5">
+                    <i class="fab fa-html5"></i>
+                    <span>HTML</span>
+                  </div>
+                  <div class="skill-icon" title="CSS3">
+                    <i class="fab fa-css3-alt"></i>
+                    <span>CSS</span>
+                  </div>
+                  <div class="skill-icon" title="Git">
+                    <i class="fab fa-git-alt"></i>
+                    <span>Git</span>
+                  </div>
+                  <div class="skill-icon" title="TechnicalSupport">
+                    <i class="fas fa-headset"></i>
+                    <span>Technical Support</span>
+                  </div>
+                  <div class="skill-icon" title="TroubleShooting">
+                    <i class="fas fa-tools"></i>
+                    <span>Troubleshooting</span>
+                  </div>
+
+              </div>
+          
+              <!-- Soft Skills -->
+              <ul class="soft-skills">
+                <li>Teamwork</li>
+                <li>Leadership</li>
+                <li>Communication</li>
+                <li>Time Management</li>
+                <li>Adaptability</li>
+                <li>Problem Solving</li>
+              </ul>
+            </div>
+          </div>
+
+        <div class="download-cv">
+            <a href = "https://drive.google.com/Makgopa_CV/view" target = "_blank">View Full CV </a>
+        </div>
 
     </section>
 
-    <!-- Skills Section-->
-    <section id = "skills">
 
-    </section>
 
     <!-- Projects Section-->
     <section id = "projects">
-
+     
     </section>
 
     <!-- Contact Section-->
