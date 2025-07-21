@@ -597,3 +597,122 @@ nav a.active::after {
   padding: 0.5rem 1rem;
   border-radius: 6px;
 }
+
+/* Contact Section */
+.contact-section {
+  background: var(--retro-offwhite);
+  padding: 6rem 2rem;
+}
+
+.contact-container {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-info, .contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info h2, .contact-form h2 {
+  color: var(--retro-brown);
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.contact-info a {
+  color: var(--retro-blue);
+  text-decoration: none;
+}
+
+.social-icons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  color: var(--text-dark);
+  font-size: 1.3rem;
+  transition: all 0.3s;
+}
+
+.social-icons a:hover {
+  background: var(--retro-yellow);
+  color: #fff;
+  border-color: var(--retro-yellow);
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--retro-blue);
+}
+
+.contact-form .btn {
+  background: var(--retro-red);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: fit-content;
+}
+
+.contact-form .btn:hover {
+  background: var(--retro-yellow);
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+  .contact-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
