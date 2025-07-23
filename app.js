@@ -6,6 +6,42 @@ const navLinks = document.querySelectorAll(".nav-link");
 const menu = document.querySelector('#mobile-menu');
 const navList = document.querySelector('nav ul'); // Select the full nav list (ul)
 
+const phrases = [
+    "an Aspiring Web Developer",
+    "an Aspiring Software Developer",
+    "a Final Year Student",
+    "a Tech Enthusiast",
+    "a Problem Solver",
+  ];
+  
+  let currentPhrase = 0;
+  let currentChar = 0;
+  let isDeleting = false;
+  const speed = 100; // typing speed
+  const delay = 2000; // delay before deleting
+  const textElement = document.querySelector(".typewriter-text");
+  
+  function type() {
+    const current = phrases[currentPhrase];
+    const displayedText = current.slice(0, currentChar);
+    textElement.textContent = displayedText;
+  
+    if (!isDeleting && currentChar < current.length) {
+      currentChar++;
+      setTimeout(type, speed);
+    } else if (isDeleting && currentChar > 0) {
+      currentChar--;
+      setTimeout(type, speed / 2);
+    } else {
+      isDeleting = !isDeleting;
+      if (!isDeleting) currentPhrase = (currentPhrase + 1) % phrases.length;
+      setTimeout(type, delay);
+    }
+  }
+  
+  document.addEventListener("DOMContentLoaded", type);
+  
+
 // Sending email
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
