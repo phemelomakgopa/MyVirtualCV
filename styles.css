@@ -1,12 +1,13 @@
 :root {
   --retro-brown: #804D37;
   --retro-blue: #43C6C3;
-  --retro-offwhite: #F5F4ED;
+  --retro-offwhite: #121212;
   --retro-yellow: #F2C749;
   --retro-red: #F75A33;
-  --background-opacity: rgba(245, 244, 237, 0.8);
-  --text-dark: #333;
+  --background-opacity: rgba(32, 32, 32, 0.9);
+  --text-dark: #f0f0f0;
 }
+
 
 /* Reset */
 * {
@@ -54,13 +55,13 @@ header .container {
 #logo {
   font-size: 1.5rem;
   font-weight: bold;
-  background-image: linear-gradient(to top, #333 0%, #804D37 100%);
+  background-image: linear-gradient(to top, #fff 0%, #43C6C3 100%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
-  cursor: pointer;
+  cursor: pointer;  
   text-decoration: none;
 }
 
@@ -113,24 +114,15 @@ nav a.active::after {
   transition: 0.3s ease;
 }
 
+
+
 /* Home Section */
 .home-section {
   position: relative;
   height: 100vh;
-  background-image: url('images/MyselfBackground.JPG');
-  background-size: cover;
-  background-position: center;
+  background-color: #1e1e1e;
   overflow: hidden;
-}
-
-.home-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(128, 77, 55, 0.6);
-  z-index: 1;
+  color: white;
 }
 
 .home-content {
@@ -181,9 +173,9 @@ nav a.active::after {
 
 .home-socials a {
   font-size: 1.4rem;
-  color: var(--text-dark);
-  background: white;
-  border: 1px solid #ccc;
+  color: white;
+  background: #1e1e1e;
+  border: 1px solid #333;
   border-radius: 50%;
   width: 38px;
   height: 38px;
@@ -195,13 +187,13 @@ nav a.active::after {
 
 .home-socials a:hover {
   background: var(--retro-yellow);
-  color: white;
+  color: #121212;
   border-color: var(--retro-yellow);
 }
 
 .home-text .btn {
   padding: 10px 20px;
-  background-color: var(--retro-red);
+  background-color: var(--retro-brown);
   color: white;
   text-decoration: none;
   border-radius: 8px;
@@ -213,13 +205,9 @@ nav a.active::after {
   transition: background 0.3s ease;
 }
 
-.btn {
-  
-}
-
 .btn:hover {
   background-color: var(--retro-yellow);
-  color: var(--text-dark);
+  color: #121212;
 }
 
 .home-image {
@@ -233,14 +221,31 @@ nav a.active::after {
   max-width: 300px;
   width: 100%;
   border: 1px solid var(--retro-blue);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 }
+
 
 /* About Section */
 .about-section {
   padding: 6rem 2rem;
-  background: var(--retro-offwhite);
-  color: var(--text-dark);
+  background-image: url('images/MyselfBackground.JPG');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.8); /* dark overlay */
+  z-index: -1;
 }
 
 .about-container {
@@ -259,13 +264,14 @@ nav a.active::after {
 .about-text h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: var(--retro-brown);
+  color: var(--retro-blue);
 }
 
 .about-text p {
   font-size: 1rem;
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  color: #ddd;
 }
 
 .about-text ul {
@@ -276,6 +282,7 @@ nav a.active::after {
 .about-text ul li {
   margin-bottom: 0.75rem;
   font-size: 1rem;
+  color: #ccc;
 }
 
 .about-img {
@@ -288,11 +295,12 @@ nav a.active::after {
   max-width: 100%;
   max-height: 350px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
 }
 
 /* Mobile Responsive */
 @media (max-width: 640px) {
+
   nav ul {
     position: absolute;
     top: 80px;
@@ -347,14 +355,14 @@ nav a.active::after {
   .home-content {
     flex-direction: column;
     text-align: center;
+    justify-content: center;      
+    padding-top: 100px;           
+    padding-bottom: 2rem;
+    gap: 2rem;                  
   }
 
-  .home-image {
-    margin-top: 2rem;
-  }
-
-  .home-image img {
-    max-width: 200px;
+  .home-text {
+    max-width: 100%;
   }
 
   .home-text h1 {
@@ -363,6 +371,14 @@ nav a.active::after {
 
   .home-text h2 {
     font-size: 1.2rem;
+  }
+
+  .home-image {
+    margin-top: 1.5rem;
+  }
+
+  .home-image img {
+    max-width: 180px;
   }
 
   .about-container {
@@ -375,11 +391,12 @@ nav a.active::after {
   }
 }
 
+
 /* Resume Section */
 .resume-section {
-  background: var(--retro-offwhite);
+  background: #121212;
   padding: 6rem 2rem;
-  color: var(--text-dark);
+  color: #f0f0f0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -389,30 +406,35 @@ nav a.active::after {
 .resume-section h2 {
   font-size: 3rem;
   margin-bottom: 2rem;
-  color: var(--retro-brown);
+  color: var(--retro-blue);
   text-align: center;
 }
+
 
 .resume-subsection {
   width: 100%;
   max-width: 1100px;
   padding: 2rem;
-  background: #fff;
+  background: #1e1e1e;
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeInUp 0.8s ease forwards;
 }
 
+.resume-subsection:nth-child(even) {
+  background: #191919;
+}
+
 .resume-subsection:hover {
   transform: translateY(-6px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .resume-subsection h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  color: var(--retro-brown);
+  color: var(--retro-yellow);
   text-align: center;
 }
 
@@ -429,19 +451,21 @@ nav a.active::after {
 .resume-entry h5 {
   font-size: 1rem;
   margin-bottom: 0.2rem;
-  color: var(--retro-brown);
+  color: var(--retro-yellow);
 }
 
 .resume-entry p {
   font-size: 0.8rem;
   font-weight: bold;
+  color: #ccc;
 }
+
 .resume-entry ul li {
   font-size: 1rem;
   line-height: 1.6;
   list-style: none;
+  color: #ddd;
 }
-
 
 /* Download CV Button */
 .download-cv {
@@ -451,7 +475,7 @@ nav a.active::after {
 }
 
 .download-cv a {
-  background-color: var(--retro-red);
+  background-color: var(--retro-brown);
   color: white;
   padding: 0.75rem 2rem;
   border-radius: 8px;
@@ -461,8 +485,8 @@ nav a.active::after {
 }
 
 .download-cv a:hover {
-  background-color: var(--retro-yellow);
-  color: var(--text-dark)
+  background-color: var(--retro-blue);
+  color: black;
 }
 
 /* Skills SubSection */
@@ -493,9 +517,10 @@ nav a.active::after {
 .skill-icon span {
   font-size: 1rem;
   margin-top: 0.5rem;
-  color: var(--text-dark);
+  color: #e0e0e0;
 }
 
+/* Soft Skills Pills */
 .soft-skills {
   list-style: none;
   display: flex;
@@ -506,19 +531,20 @@ nav a.active::after {
 }
 
 .soft-skills li {
-  background: var(--retro-yellow);
+  background: var(--retro-blue);
   padding: 0.5rem 1rem;
   border-radius: 10px;
   font-size: 0.95rem;
   color: var(--text-dark);
   font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: background 0.3s ease;
 }
 
 .soft-skills li:hover {
-  background: var(--retro-red);
-  color: white;
+  background: var(--retro-yellow);
+  color: black
+  ;
 }
 
 /* Tooltip Animation */
@@ -558,15 +584,50 @@ nav a.active::after {
   }
 }
 
-/* Fix padding and spacing */
-.resume-section > h2 {
-  text-align: center;
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
-  color: var(--retro-brown);
-}
 
 /* Projects Section */
+/*.projects-section {
+  background: #1a1a1a;
+  padding: 6rem 2rem;
+  color: #f0f0f0;
+}*/
+
+.projects-section {
+  padding: 6rem 2rem;
+  background-image: url('images/MyselfBackgroundNot.JPG');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 1;
+  color: white;
+  overflow: hidden;
+}
+
+.projects-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.7); 
+  z-index: 0;
+}
+
+.projects-section * {
+  position: relative;
+  z-index: 2;
+}
+
+
+.projects-section h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--retro-blue);
+  text-align: center;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -574,25 +635,19 @@ nav a.active::after {
   padding-top: 2rem;
 }
 
-.projects-section h2 {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  color: var(--retro-brown);
-  text-align: center;
-}
-
 .project-card {
-  background-color: #fff;
+  background-color: #232323;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
+  color: #eaeaea;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
 .project-card img {
@@ -605,12 +660,13 @@ nav a.active::after {
 .project-card h3 {
   margin-top: 1rem;
   font-size: 1.2rem;
-  color: var(--retro-brown);
+  color: var(--retro-yellow);
 }
 
 .project-card p {
   font-size: 0.95rem;
   margin: 1rem 0;
+  color: #ccc;
 }
 
 .project-links {
@@ -628,7 +684,7 @@ nav a.active::after {
 }
 
 .project-links a:hover {
-  color: var(--retro-red);
+  color: var(--retro-yellow);
 }
 
 .project-links .btn {
@@ -638,11 +694,14 @@ nav a.active::after {
   border-radius: 6px;
 }
 
+
 /* Contact Section */
 .contact-section {
-  background: var(--retro-offwhite);
+  background: #111;
   padding: 6rem 2rem;
+  color: #eaeaea;
 }
+
 
 .contact-container {
   display: flex;
@@ -652,13 +711,15 @@ nav a.active::after {
   flex-wrap: wrap;
 }
 
-.contact-info, .contact-form {
+.contact-info,
+.contact-form {
   flex: 1;
   min-width: 300px;
 }
 
-.contact-info h2, .contact-form h2 {
-  color: var(--retro-brown);
+.contact-info h2,
+.contact-form h2 {
+  color: var(--retro-blue);
   margin-bottom: 1rem;
   font-size: 2rem;
 }
@@ -666,7 +727,7 @@ nav a.active::after {
 .contact-info p {
   font-size: 1rem;
   margin-bottom: 0.8rem;
-  
+  color: #ccc;
 }
 
 .contact-info a {
@@ -684,13 +745,12 @@ nav a.active::after {
   width: 40px;
   height: 40px;
   display: flex;
-  
   justify-content: center;
   align-items: center;
-  background: #fff;
-  border: 1px solid #ccc;
+  background: #222;
+  border: 1px solid #444;
   border-radius: 50%;
-  color: var(--text-dark);
+  color: var(--retro-blue);
   font-size: 1.3rem;
   transition: all 0.3s;
 }
@@ -720,9 +780,11 @@ nav a.active::after {
 .contact-form textarea {
   width: 100%;
   padding: 0.9rem;
-  border: 1px solid #ccc;
+  border: 1px solid #444;
   border-radius: 6px;
   font-size: 1rem;
+  background: #1e1e1e;
+  color: #eee;
   outline: none;
   transition: border-color 0.3s;
 }
@@ -733,7 +795,7 @@ nav a.active::after {
 }
 
 .contact-form .btn {
-  background: var(--retro-red);
+  background: var(--retro-blue);
   color: white;
   padding: 0.8rem 2rem;
   border: none;
@@ -745,7 +807,7 @@ nav a.active::after {
 }
 
 .contact-form .btn:hover {
-  background: var(--retro-yellow);
+  background: var(--retro-brown);
   color: var(--text-dark);
 }
 
@@ -753,11 +815,13 @@ nav a.active::after {
   .form-row {
     flex-direction: column;
   }
+
   .contact-container {
     flex-direction: column;
     gap: 2rem;
   }
 }
+
 
 /* Footer Styles */
 .site-footer {
@@ -792,5 +856,5 @@ nav a.active::after {
 }
 
 .footer-links a:hover {
-  color: var(--retro-yellow);
+  color: var(--retro-blue);
 }

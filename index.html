@@ -183,7 +183,7 @@
           </div>
 
         <div class="download-cv">
-            <a href = "https://drive.google.com/file/d/1GWvL9FfXNS4EGkz4BRV9I1CLRRsVt965/view?usp=sharing" target = "_blank">View Full CV </a>
+            <a href = "https://drive.google.com/file/d/1GWvL9FfXNS4EGkz4BRV9I1CLRRsVt965/view?usp=sharing" target = "_blank"><i class ="fas fa-download"></i>  View Full CV </a>
         </div>
 
     </section>
@@ -198,8 +198,8 @@
        <!-- Messaging App -->
         <div class="project-card">
          <img src = "images/projects/MessagingApp.png" alt = "Messaging App Screenshot">
-         <h3>ChattyBatty Messaging App</h3>
-         <p>A modern messaging app platform with group chat, emojis, and more, built using React, JavaScript, and Vite.</p>
+         <h3>Messaging App</h3>
+         <p>A modern messaging platform built with React, JavaScript, and Vite, featuring group chats, emoji support, user statuses, and more. Data is managed in real-time using Firebase Firestore, ensuring smooth performance and seamless interactions.</p>
          <div class="project-links">
            <a href = "https://chattybatty.onrender.com/" target="_blank" class = "btn">Visit Website</a>
            <a href = "https://github.com/HumaidEbrahim/Messaging-App" target = "_blank">
@@ -211,8 +211,8 @@
        <!-- Online Store -->
        <div class="project-card">
          <img src="images/Projects/OnlineStore.png" alt="Online Store Screenshot">
-         <h3>Quantum Mak Online Store</h3>
-         <p>A tech-focused eCommerce platform built in Visual Studio using ASP.NET (.aspx), showcasing GUI design and coding skills.</p>
+         <h3>Online Store</h3>
+         <p>A tech-focused eCommerce platform built in Visual Studio using ASP.NET (.aspx), designed to help Quantum Mak customers browse products, select items, and complete purchases with live cart updates and a clean GUI.</p>
          <div class="project-links">
            <a href="https://github.com/phemelomakgopa/Assessment_2-2023" target="_blank">
              <i class="fab fa-github"></i> See in GitHub
@@ -223,8 +223,8 @@
        <!-- Coffee Shop-->
         <div class="project-card">
          <img src = "images/Projects/Cafe-WelPg.png" alt = "Coffee Shop Screenshot">
-         <h3>Coffee Management System</h3>
-         <p>A collaborative desktop app developed in Visual Studio (.NET Framework - C#), focused on UI, logic, and database design.</p>
+         <h3>Café System</h3>
+         <p>A desktop café management app developed in Visual Studio using the .NET Framework (C#), focused on streamlining sales and order processing for BeetleCafe staff through a user-friendly interface and backend logic.</p>
          <div class="project-links">
            <a href = "https://github.com/phemelomakgopa/Assessment1-2023-" target ="_blank">
              <i class = "fab fa-github"></i> See in GitHub
@@ -235,8 +235,8 @@
         <!-- Library Management System -->
          <div class="project-card">
            <img src = "images/Projects/TTL-LogInPg.png" alt = "Library System Screenshot">
-           <h3>Time Travel Library System</h3>
-           <p>A simple Library Management System built using Java, Apache Beans, and MySQL, developed to manage book lending and tracking.</p>
+           <h3>Library System</h3>
+           <p>A simple book tracking system built with Java, Apache Beans, and MySQL to help the Time Travel Library manage lending, returns, and inventory updates efficiently via a clean GUI and connected database.</p>
            <div class="project-links">
              <a href = "https://github.com/phemelomakgopa/Library_Management_System" target="_blank">
                <i class = "fab fa-github"></i> See in GitHub
@@ -272,10 +272,10 @@
         <!-- Right Column: Contact Form -->
         <div class="contact-form">
           <h2>Or Let Me Reach You</h2>
-          <form action="#" method="POST">
+          <form id="contact-form">
             <div class="form-row">
-              <input type="text" name="name" placeholder="Full Name">
-              <input type="email" name="email" placeholder="Email" required>
+              <input type="text" name="from_name" placeholder="Your Name">
+              <input type="email" name="email" placeholder="Your Email" required>
             </div>
             <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
             <button type="submit" class="btn">Send</button>
@@ -300,6 +300,13 @@
 
 
     <script src = "app.js"></script>
-    
+    <script type="text/javascript"
+      src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function(){
+        emailjs.init("tjnntPMDpcz-ycImF");
+      })();
+    </script>
+
 </body>
 </html>

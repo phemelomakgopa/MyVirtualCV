@@ -6,6 +6,20 @@ const navLinks = document.querySelectorAll(".nav-link");
 const menu = document.querySelector('#mobile-menu');
 const navList = document.querySelector('nav ul'); // Select the full nav list (ul)
 
+// Sending email
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+  
+    emailjs.sendForm('service_xt2omy4', 'template_e0a7je6', this)
+      .then(() => {
+        alert("Message sent successfully!");
+        this.reset();
+      }, (error) => {
+        console.log(error);
+        alert("Failed to send message. Please try again later.");
+      });
+  });
+
 menu.addEventListener('click', () => {
     menu.classList.toggle('is-active');    // Animate burger icon
     navList.classList.toggle('active');    // Show/hide mobile nav links
