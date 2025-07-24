@@ -42,5 +42,11 @@ I’m **Phemelo Shaun Makgopa**, an IT student at North-West University currentl
 - EmailJS API (for Contact Form)
 - GitHub Pages (Deployment)
 
+## 🔍 Known Issues
+
+- Some image files may not display correctly on GitHub Pages due to case sensitivity
+- Hard reload might be needed after first visit
+
+#### Thank you for Visiting my Virtual CV!!!
 
 > 🔧 *This project is for personal showcase and is open to inspiration and forks, but not for commercial use without permission.*
