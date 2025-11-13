@@ -12,6 +12,11 @@ menu.addEventListener('click', () => {
   navList.classList.toggle('active');     // Toggle mobile menu visibility
 });
 
+// Automatic & manual scrolling
+const track = document.querySelector('.projects-track');
+const btnLeft = document.querySelector('.scroll-btn.left');
+const btnRight = document.querySelector('.scroll-btn.right');
+
 // === SECTION: Typewriter Effect ===
 const phrases = [
   "an Aspiring Web Developer",
@@ -29,6 +34,39 @@ const speed = 100;       // Typing speed (ms)
 const delay = 2000;      // Pause before deleting (ms)
 const textElement = document.querySelector(".typewriter-text");
 
+// Projects Carousel Auto-Scroll
+let scrollInterval;
+
+function startAutoScroll() {
+  scrollInterval = setInterval(() => {
+    track.scrollBy({ left: 310, behavior: 'smooth' });
+    if (track.scrollLeft + track.clientWidth >= track.scrollWidth) {
+      track.scrollTo({ left: 0, behavior: 'smooth' });
+    }
+  }, 4000);
+}
+
+btnLeft.addEventListener('click', () => track.scrollBy({ left: -310, behavior: 'smooth' }));
+btnRight.addEventListener('click', () => track.scrollBy({ left: 310, behavior: 'smooth' }));
+
+
+track.addEventListener('mouseenter', () => clearInterval(scrollInterval));
+track.addEventListener('mouseleave', startAutoScroll);
+
+
+startAutoScroll();
+
+
+// Image flip on hover
+const cards = document.querySelectorAll('.project-card');
+cards.forEach(card => {
+  const images = JSON.parse(card.dataset.images);
+  const img = card.querySelector('img');
+  card.addEventListener('mouseenter', () => { img.src = images.back; });
+  card.addEventListener('mouseleave', () => { img.src = images.front; });
+});
+
+// Typewriter function
 function type() {
   const current = phrases[currentPhrase];
   const displayedText = current.slice(0, currentChar);
