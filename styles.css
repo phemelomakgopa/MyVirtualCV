@@ -634,7 +634,7 @@ nav a.active::after {
 }*/
 
 .projects-section {
-  /* padding: 6rem 2rem; */
+  padding: 6rem 0;
   background-image: url('images/MyselfBackgroundNot.JPG');
   background-size: cover;
   background-position: center;
@@ -643,6 +643,129 @@ nav a.active::after {
   z-index: 1;
   color: white;
   overflow: hidden;
+}
+
+/* Projects v2 (new layout) */
+.projects-section-v2 {
+  padding: 6rem 0;
+  background-image: url('images/MyselfBackgroundNot.JPG');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.projects-section-v2 > .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.projects-v2 {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.projects-v2-left {
+  flex: 1 1 420px;
+  min-width: 260px;
+}
+
+.projects-v2-right {
+  flex: 1 1 480px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.projects-v2-right {
+  flex: 1 1 480px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* anchor absolute nav */
+  padding-bottom: 72px; /* reserve space for nav so it doesn't overlap following content */
+}
+
+.project-image-wrap {
+  width: 100%;
+  display: block;
+  position: relative; /* position context for absolute nav */
+  height: 360px; /* fixed visual area so nav position is consistent */
+  max-width: 680px;
+}
+
+.project-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  display: block;
+}
+
+/* Position nav absolutely below the image, aligned bottom-right, independent of image content */
+.project-nav {
+  position: absolute;
+  right: 0; /* align to right edge of image area */
+  bottom: -48px; /* sit below the image area */
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  z-index: 20;
+}
+
+.nav-btn {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.nav-btn:hover {
+  background: var(--retro-blue);
+  color: #121212;
+}
+
+@media (max-width: 900px) {
+  .projects-v2 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projects-v2-left,
+  .projects-v2-right {
+    width: 100%;
+    max-width: 900px;
+  }
+
+  .project-nav {
+    justify-content: center;
+  }
+}
+
+/* Make inner container full-bleed inside projects section so background covers edges
+   but keep a centred max-width for headings if needed. */
+.projects-section > .container {
+  max-width: 100%;
+  padding: 0; /* allow the track to use full viewport width */
+}
+
+/* Keep the heading visually centred and constrained while track is full-bleed */
+.projects-section h2 {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 0 2rem;
 }
 
 .projects-section::before {
@@ -670,22 +793,24 @@ nav a.active::after {
 }
 
 .projects-carousel {
-position: relative;
-overflow: hidden;
-display: flex;
-align-items: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .projects-track {
-display: flex;
-gap: 1.5rem;
-overflow-x: auto;
-scroll-behavior: smooth;
-padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 2rem; /* horizontal padding for content */
+  align-items: stretch;
 }
 
 .project-card {
-  flex: 0 0 300px;
+  flex: 0 0 300px; /* original fixed card width */
   background-color: #232323;
   padding: 1.5rem;
   border-radius: 12px;
@@ -762,6 +887,186 @@ z-index: 10;
   padding: 0.5rem 1rem;
   border-radius: 6px;
 }
+
+
+/* =========================
+   PROJECTS V2 (Latest Layout)
+   ========================= */
+
+.projects-section-v2 {
+  padding: 90px 0;
+  position: relative;
+  background: linear-gradient(180deg, #1b232f 0%, #161d27 100%);
+}
+
+.projects-title {
+  text-align: center;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  margin-bottom: 60px;
+  color: #56d6d1; /* teal-ish accent */
+  font-weight: 800;
+}
+
+.projects-v2 {
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.projects-v2-left {
+  color: #e9eef6;
+}
+
+.project-number {
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 2px;
+  color: rgba(233, 238, 246, 0.12);
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.project-name {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.project-desc {
+  color: rgba(233, 238, 246, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 14px;
+  max-width: 520px;
+}
+
+.project-stack {
+  color: rgba(86, 214, 209, 0.9);
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.project-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+/* icon buttons with tooltip */
+.icon-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  color: #e9eef6;
+  text-decoration: none;
+  position: relative;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.icon-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: rgba(86, 214, 209, 0.85);
+  background: rgba(86, 214, 209, 0.10);
+}
+
+.icon-btn::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.70);
+  color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.icon-btn:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.projects-v2-right {
+  position: relative;
+}
+
+.project-image-wrap {
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+}
+
+.project-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 300ms ease;
+}
+
+.project-image-wrap:hover img {
+  transform: scale(1.05);
+}
+
+/* Nav buttons bottom-right */
+.project-nav {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  gap: 10px;
+  z-index: 5;
+}
+
+.nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(0, 0, 0, 0.35);
+  color: #e9eef6;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.nav-btn:hover {
+  transform: scale(1.06);
+  border-color: rgba(86, 214, 209, 0.85);
+  background: rgba(86, 214, 209, 0.12);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .projects-v2 {
+    grid-template-columns: 1fr;
+  }
+  .project-nav {
+    right: 12px;
+    bottom: 12px;
+  }
+  .project-desc {
+    max-width: 100%;
+  }
+}
+
 
 
 /* Contact Section */
@@ -926,4 +1231,30 @@ z-index: 10;
 
 .footer-links a:hover {
   color: var(--retro-blue);
+}
+
+
+/* Make each project card 1.5x the base size on larger screens so
+   the viewport shows the full card plus half of the next. */
+@media (min-width: 900px) {
+  .projects-track {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .project-card {
+    flex: 0 0 300px; /* revert to original fixed width on large screens */
+    padding: 1.5rem;
+    min-width: 300px;
+    max-width: none;
+  }
+}
+
+@media (max-width: 899px) {
+  /* revert to more compact card sizing on medium/small screens */
+  .project-card {
+    flex: 1 1 300px;
+    min-width: 260px;
+    max-width: 420px;
+  }
 }
