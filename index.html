@@ -1,424 +1,553 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaun's Virtual CV</title>
-    <link rel="stylesheet" href="styles.css"/>
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shaun Makgopa | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
-<!-- Header Section-->
-    <header>
-        <div class="container">
-            <a href="#home" id="logo"> Shaun Makgopa</a>
-            <div class="conToggle" id = "mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href = "#home" class = "nav-link active"> Home</a></li>
-                    <li><a href = "#about" class = "nav-link"> About Me</a></li>
-                    <li><a href = "#resume" class = "nav-link"> Resume</a></li>
-                    <li><a href = "#projects" class = "nav-link"> Projects</a></li>
-                    <li><a href = "#contact" class = "nav-link"> Contact Me</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div id="app">
+    <aside id="sidebar">
+      <!-- Top: Logo / Name -->
+      <div class="sidebar-logo">
+        <a href="#home" class="sidebar-brand">
+          <img src="images/MainPortraitCutBG.jpeg" alt="Shaun" class="sidebar-avatar" />
+          <div class="sidebar-name">
+            <span class="sidebar-fullname">SHAUN</span>
+            <span class="sidebar-fullname">MAKGOPA</span>
+          </div>
+        </a>
+      </div>
 
-    <!-- Home Section-->
-    <section id="home" class="home-section">
-        <div class="home-overlay"></div>
-        <div class="home-content container">
-          
+      <!-- Navigation -->
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#home" class="nav-item active"><i class="fas fa-house"></i><span>Home</span></a></li>
+          <li><a href="#about" class="nav-item"><i class="fas fa-user"></i><span>About</span></a></li>
+          <li><a href="#experience" class="nav-item"><i class="fas fa-briefcase"></i><span>Experience</span></a></li>
+          <li><a href="#education" class="nav-item"><i class="fas fa-graduation-cap"></i><span>Education</span></a></li>
+          <li><a href="#skills" class="nav-item"><i class="fas fa-code"></i><span>Skills</span></a></li>
+          <li><a href="#projects" class="nav-item"><i class="fas fa-folder-open"></i><span>Projects</span></a></li>
+          <li><a href="#contact" class="nav-item"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+        </ul>
+      </nav>
+
+      <!-- Bottom: Social icons -->
+      <div class="sidebar-socials">
+        <a href="https://www.linkedin.com/in/phemelo-makgopa-838731276" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/phemelomakgopa" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://x.com/Shaun47Shaun" target="_blank" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://wa.me/27737627621" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </aside>
+    <main id="main-content">
+      <section id="home" class="page-section section-home">
+        <div class="home-inner">
           <div class="home-text">
-            <h1>Hi, I'm <span>Shaun Makgopa</span></h1>
-            <h2>I am <span class="typewriter-text"></span></h2>
-
-            <p>
-              A passionate and driven Information Technology student with a GPA of 71.08 and a strong foundation in programming, databases, and analytics. Experienced in mentoring, technical support, and user interface design.
+            <p class="section-eyebrow">Hello, I'm</p>
+            <h1 class="home-name">Phemelo <br/><span>Shaun Makgopa</span></h1>
+            <p class="home-role">
+              <span id="typewriter-el"></span><span class="t-cursor">|</span>
             </p>
-
-            <div class="home-socials">
-              <a href="https://www.linkedin.com/in/phemelo-makgopa-838731276" target="_blank" title="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://github.com/phemelomakgopa" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="https://t.me/shaun47shaun" target="_blank" title="Telegram">
-                <i class="fab fa-telegram-plane"></i>
-              </a>
+            <p class="home-tagline">BSc IT Graduate • Based in Johannesburg, SA</p>
+            <div class="home-actions">
+              <a href="#projects" class="btn-primary">View My Work</a>
+              <a href="https://drive.google.com/file/d/1dNFkICQ6QGuJNRX3afcY9XVJt37vkdhE/view?usp=drive_link"
+                 target="_blank" class="btn-outline">View CV</a>
             </div>
-    
-           <!-- <a href="#projects" class="btn">View My Projects</a> -->
           </div>
-      
-          <div class="home-image">
-            <img src="images/MainPortraitCut.jpg" alt="Shaun Makgopa" />
+          <div class="home-photo">
+            <div class="photo-ring">
+              <img src="images/GradImgIm.jpeg" alt="Shaun Makgopa" />
+            </div>
           </div>
-      
         </div>
       </section>
 
-    <!-- About Section-->
-   <section id="about" class="about-section">
-    <div class="container about-container">
-
-      <div class="about-text">
-        <h2>Who Am I?</h2>
-
-        <p>
-          My full name is <strong>Phemelo Shaun Makgopa</strong>, and I’m a <b>BSc in IT graduate</b> at <b>North-West University</b> in Potchefstroom, South Africa. I have a strong interest in <b>software engineering and full-stack development</b>, with hands-on experience building web and system-based applications using modern development tools and frameworks.
-        </p>
-
-        <p>
-          I’m fluent in <b>English, Sepedi, IsiZulu, Setswana, and Sesotho</b>, which helps me connect with diverse communities. I'm currently learning <b>German</b> using Duolingo. I’m always eager to learn and take on new challenges that push my creativity and technical ability forward.
-        </p>
-
-        <div class="about about--soft">
-          <h4>Outside of Development</h4>
-          <p class="about-body">
-            I enjoy <b>reading</b> (self-help, finance, history, etc.), <b>coding</b> personal projects, hitting the <b>gym</b>,
-            <b>researching</b> some technologies, and critically evaluating claims I come across on X.
-            I also enjoy watching <b>series more than movies</b>, and I recommend WestWorld :).
-          </p>
-        </div>
-
-      </div>
-
-      <div class="about-img">
-        <div class="about-img-frame">
-          <img src="images/AboutBoard.png" alt="My About Collage image" loading="lazy">
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-    <!-- Resume Section-->
-    <section id = "resume" class = "resume-section">
-        <h2>Resume</h2>
-
-        <div class="resume-subsection">
-            <h3>Academic Background</h3>
-            <div class="resume-entry">
-                <h4>BSc in Information Technology</h4>
-                <h5>North-West University</h5>
-                <p>2022 - 2025</p>
+      <section id="about" class="page-section">
+        <p class="section-eyebrow reveal">Who I Am</p>
+        <h2 class="section-title reveal reveal-delay-1">A developer <em>driven by purpose.</em></h2>
+        <div class="about-grid">
+          <div class="about-body reveal reveal-delay-2">
+            <p>I'm a newly qualified BSc Information Technology graduate (GPA: 71%) from North-West University, Potchefstroom. I'm passionate about building systems that work, with clean code, reliable architecture, and interfaces people actually enjoy using.</p>
+            <p style="margin-top:1rem;">Currently interning as a Technical Systems & ICT Coordinator at the Centre for Supplier Development in Johannesburg, where I handle ICT support, Microsoft 365 administration, and web system maintenance in a real business environment.</p>
+            <p style="margin-top:1rem;">I'm fluent in English, Sepedi, IsiZulu, Setswana, and Sesotho. Outside work I read broadly, hit the gym, and critically evaluate whatever crosses my X feed.</p>
+          </div>
+          <div class="about-img reveal reveal-delay-3">
+            <div class="about-img-frame">
+              <img src="images/AboutBoard.png" alt="My About Collage image" loading="lazy">
             </div>
-            <div class="resume-entry">
-                <h4>National Senior Certificate (Matric)</h4>
-                <h5>Phafane Senior Secondary School</h5>
-                <p>2021</p>
-            </div>
+          </div>
         </div>
+      </section>
 
-        <div class="resume-subsection">
-            <h3>Experience</h3>
-            <div class="resume-entry">
-                <h4>Student Assistant</h4>
-                <h5>North-West University</h5>
-                <p>Feb 2024 - Nov 2025</p>
-                <ul>
-                    <li>Supported students in C# and .ASP.NET with Visual Studio</li>
-                    <li>Marked and gave feedback on UI programming assignments</li>
-                    <li>Answered lab questions and helped students debug projects</li>
-                </ul>
+      <section id="experience" class="page-section">
+        <p class="section-eyebrow reveal">Work History</p>
+        <h2 class="section-title reveal reveal-delay-1">Experience</h2>
+        <div class="timeline">
+
+          <div class="tl-item reveal reveal-delay-2">
+            <div class="tl-marker">
+              <div class="tl-dot"></div>
+              <div class="tl-line"></div>
             </div>
-            <div class="resume-entry">
-                <h4>Cyber Café Admin</h4>
-                <h5>Local Internet Café</h5>
-                <p>April 2019 – Dec 2019</p>
-                <ul>
-                  <li>Helped customers with printing, scanning, and MS Office tools.</li>
-                  <li>Resolved basic IT issues and improved the customer experience.</li>
-                </ul>
-              </div>
-        </div>
-
-        <div class="resume-subsection">
-            <h3>Technical Skills & Soft Skills </h3>
-          
-            <div class="resume-entry skills-icons">
-              <!-- Technical Skills -->
-              <div class="skills-icons">
-                <div class="skill-icon">
-                  <i class="fab fa-python"></i>
-                  <span>Python</span>
-                </div>
-                <div class="skill-icon">
-                  <i class="fab fa-java"></i>
-                  <span>Java</span>
-                </div>
-
-                <div class="skill-icon">
-                  <i class="fab fa-github"></i>
-                  <span>GitHub</span>
-                </div>
-                
-                  <div class="skill-icon">
-                    <i class="fab fa-html5"></i>
-                    <span>HTML</span>
-                  </div>
-                  <div class="skill-icon">
-                    <i class="fab fa-css3-alt"></i>
-                    <span>CSS</span>
-                  </div>
-                  <div class="skill-icon">
-                    <i class="fab fa-git-alt"></i>
-                    <span>Git</span>
-                  </div>
-                  <div class="skill-icon">
-                    <i class="fas fa-headset"></i>
-                    <span>Tech Support</span>
-                  </div>
-                  <div class="skill-icon">
-                    <i class="fas fa-tools"></i>
-                    <span>Troubleshooting</span>
-                  </div>
-
-              </div>
-          
-              <!-- Soft Skills -->
-              <ul class="soft-skills">
-                <li>Teamwork</li>
-                <li>Leadership</li>
-                <li>Communication</li>
-                <li>Time Management</li>
-                <li>Adaptability</li>
-                <li>Problem Solving</li>
+            <div class="tl-card">
+              <h3 class="tl-role">Technical Systems & ICT Coordinator</h3>
+              <p class="tl-meta"><span class="tl-employment">Internship</span><span class="tl-sep">•</span><span class="edu-period">March 2026 to Present</span></p>
+              <p class="tl-org">Centre for Supplier Development &nbsp;•&nbsp; Johannesburg, Gauteng</p>
+              <ul class="tl-bullets">
+                <li>Provide first-line ICT support and technical advisory to client businesses, resolving user issues in line with established procedures.</li>
+                <li>Manage user accounts, licensing, and access provisioning through Microsoft 365 Admin Centre, including full onboarding and offboarding workflows.</li>
+                <li>Maintain and continuously improve the company's web-based business registration and database management system.</li>
+                <li>Monitor and support network infrastructure remotely and on-site, including switches and firewalls in server racks.</li>
+                <li>Maintain ICT records and documentation in accordance with ISO 9001:2015 QMS requirements.</li>
               </ul>
             </div>
           </div>
 
-        <div class="download-cv">
-            <a href = "https://drive.google.com/file/d/1dNFkICQ6QGuJNRX3afcY9XVJt37vkdhE/view?usp=drive_link" target = "_blank">
-              <i class ="fas fa-eye"></i>  View Full CV </a>
-        </div>
-
-    </section>
-
-
-    <!-- Projects Section -->
-  <section id="projects" class="projects-section-v2">
-    <div class="container">
-      <h2 class="projects-title">Projects</h2>
-
-      <div class="projects-v2">
-        <!-- LEFT: Details -->
-        <div class="projects-v2-left">
-          <div class="project-number" id="projectNumber">01</div>
-
-          <h3 class="project-name" id="projectTitle">Project Title</h3>
-
-          <p class="project-desc" id="projectDesc">
-            Project description goes here...
-          </p>
-
-          <p class="project-stack" id="projectStack">
-            Tech stack goes here...
-          </p>
-
-          <div class="project-actions">
-            <!-- Visit website -->
-            <a
-              id="projectLive"
-              class="icon-btn"
-              href="#"
-              target="_blank"
-              rel="noopener"
-              data-tooltip="Visit website"
-              aria-label="Visit website"
-            >
-              <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-
-            <!-- GitHub -->
-            <a
-              id="projectGithub"
-              class="icon-btn"
-              href="#"
-              target="_blank"
-              rel="noopener"
-              data-tooltip="See in GitHub"
-              aria-label="See in GitHub"
-            >
-              <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- RIGHT: Image -->
-        <div class="projects-v2-right">
-          <div class="project-image-wrap">
-            <img
-              id="projectImage"
-              src=""
-              alt="Project preview"
-            />
-          </div>
-
-          <!-- Nav (bottom-right like your reference) -->
-          <div class="project-nav">
-            <button class="nav-btn" id="projPrev" aria-label="Previous project">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="nav-btn" id="projNext" aria-label="Next project">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- DATA (hidden) -->
-        <div class="projects-data" hidden>
-          <div
-            class="project-item"
-            data-title="Project Collaboration Portal"
-            data-desc="A full-stack web app built with React, Django, and PostgreSQL to streamline university project collaboration. It features task management, file sharing, and real-time chat, with JWT authentication ensuring secure and efficient teamwork for students and supervisors."
-            data-stack="React • Django • PostgreSQL • JWT"
-            data-front="images/Projects/PCP-DB.png"
-            data-back="images/Projects/PCP-projectPg.png"
-            data-live="https://icy-stone-092219c03.2.azurestaticapps.net"
-            data-github="https://github.com/RohannNWU/Project-Collaboration-Portal"
-          ></div>
-
-          <div
-            class="project-item"
-            data-title="Jewellery eCommerce"
-            data-desc="A stylish jewellery e-commerce website built with React and Firebase, featuring elegant product showcases, responsive design, and a smooth shopping experience across devices."
-            data-stack="React • Firebase"
-            data-front="images/Projects/Jewel-eStore_landingPg.png"
-            data-back="images/Projects/Jewel-eStore.png"
-            data-live=""
-            data-github="https://github.com/phemelomakgopa/Jewel-eStore"
-          ></div>
-
-          <div
-            class="project-item"
-            data-title="Messaging App"
-            data-desc="A modern messaging platform built with React, JavaScript, and Vite, featuring group chats, emoji support, user statuses, and real-time data via Firebase Firestore."
-            data-stack="React • Vite • Firebase Firestore"
-            data-front="images/Projects/ChattyBatty.png"
-            data-back="images/Projects/messagingapp-loginPg.png"
-            data-live="https://chattybatty.onrender.com/"
-            data-github="https://github.com/HumaidEbrahim/Messaging-App"
-          ></div>
-
-          <div
-            class="project-item"
-            data-title="Computer Network"
-            data-desc="A fully configured network built in Cisco Packet Tracer, featuring routers, switches, VLAN segmentation, DHCP, and secure device communication. The project demonstrates network design, IP addressing, and connectivity troubleshooting."
-            data-stack="Cisco Packet Tracer • VLAN • DHCP • Routing"
-            data-front="images/Projects/packet-tracer-networking.png"
-            data-back="images/Projects/packet-tracer-networking.png"
-            data-live="https://drive.google.com/file/d/1Kx80aMTBC1tNx-tpT9gVFAW2W-_RTzJB/view?usp=sharing"
-            data-github="assets/Computer Networks - Networking project.pkt"
-          ></div>
-
-          <div
-            class="project-item"
-            data-title="Tech eStore"
-            data-desc="A tech-focused eCommerce platform built in Visual Studio using ASP.NET (.aspx), designed to help customers browse products, select items, and complete purchases with live cart updates."
-            data-stack="ASP.NET (.aspx) • C# • Visual Studio"
-            data-front="images/Projects/OnlineStore.png"
-            data-back="images/Projects/OnlineStore.png"
-            data-live=""
-            data-github="https://github.com/phemelomakgopa/Assessment_2-2023"
-          ></div>
-
-          <div
-            class="project-item"
-            data-title="Café System"
-            data-desc="A desktop café management app developed in Visual Studio using the .NET Framework (C#), focused on streamlining sales and order processing through a user-friendly interface."
-            data-stack=".NET Framework • C# • Visual Studio"
-            data-front="images/Projects/Cafe-WelPg.png"
-            data-back="images/Projects/Cafe-WelPg.png"
-            data-live=""
-            data-github="https://github.com/phemelomakgopa/Assessment1-2023-"
-          ></div>
-
-          <div
-            class="project-item"
-            data-title="Library System"
-            data-desc="A simple book tracking system built with Java, Apache Beans, and MySQL to manage lending, returns, and inventory updates via a clean GUI and database integration."
-            data-stack="Java • MySQL • Apache Beans"
-            data-front="images/Projects/TTL-LogInPg.png"
-            data-back="images/Projects/TTL-DBPg.png"
-            data-live=""
-            data-github="https://github.com/phemelomakgopa/Library_Management_System"
-          ></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- Contact Section-->
-    <section id="contact" class="contact-section">
-      <div class="container contact-container">
-        <!-- Left Column: Contact Info -->
-        <div class="contact-info">
-          <h2>Contact Me</h2>
-            <p><i class="fas fa-envelope" style="margin-left: 0.5rem;"></i>
-              <a href="mailto:phemeloshaunmakgopa@gmail.com"> phemeloshaunmakgopa@gmail.com</a>
-            </p>
-            <p><i class="fas fa-phone" style="margin-left: 0.5rem;"></i>
-              +27 73 762 7621
-            </p>
-    
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/phemelo-makgopa-838731276" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/phemelomakgopa" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/shaun.forty7" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://x.com/Shaun47Shaun" target="_blank" title="X"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://wa.me/27737627621" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/owkshaun.makgopa/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-          </div>
-        </div>
-    
-        <!-- Right Column: Contact Form -->
-        <div class="contact-form">
-          <h2>Or Let Me Reach You</h2>
-          <form id="contact-form">
-            <div class="form-row">
-              <input type="text" name="from_name" placeholder="Your Name">
-              <input type="email" name="email" placeholder="Your Email" required>
+          <div class="tl-item reveal reveal-delay-3">
+            <div class="tl-marker">
+              <div class="tl-dot"></div>
+              <div class="tl-line"></div>
             </div>
-            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send</button>
-          </form>
+            <div class="tl-card">
+              <h3 class="tl-role">Student Assistant</h3>
+              <p class="tl-meta"><span class="tl-employment">Temporary</span><span class="tl-sep">•</span><span class="edu-period">February 2024 to November 2025</span></p>
+              <p class="tl-org">North-West University &nbsp;•&nbsp; Apps & Advanced UI Programming</p>
+              <ul class="tl-bullets">
+                <li>Supported students with C# .NET and ASP.NET development, debugging, troubleshooting, and simplifying technical concepts.</li>
+                <li>Reviewed student work for correctness and accuracy, reinforcing structured problem resolution.</li>
+                <li>Provided peer support in a high-performance, knowledge-sharing lab environment.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="tl-item reveal reveal-delay-4">
+            <div class="tl-marker">
+              <div class="tl-dot"></div>
+            </div>
+            <div class="tl-card">
+              <h3 class="tl-role">Cyber Café Admin</h3>
+              <p class="tl-meta"><span class="tl-employment">Part-time</span><span class="tl-sep">•</span><span class="edu-period">April 2019 to December 2019</span></p>
+              <p class="tl-org">Local Internet Café</p>
+              <ul class="tl-bullets">
+                <li>Assisted customers with printing, scanning, and Microsoft Office tools.</li>
+                <li>Resolved basic IT issues and improved the overall customer experience.</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
-      </div>
-    </section>
-    
-    <!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <p>&copy; 2025 Shaun Makgopa. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+      </section>
+
+      <section id="education" class="page-section">
+        <p class="section-eyebrow reveal">Academic Background</p>
+        <h2 class="section-title reveal reveal-delay-1">Education</h2>
+        <div class="edu-grid">
+
+          <div class="edu-card reveal reveal-delay-2">
+            <div class="edu-card-header">
+              <div>
+                <h3 class="edu-degree">BSc in Information Technology</h3>
+                <p class="edu-institution">North-West University, Potchefstroom</p>
+                <p class="edu-period">February 2022 to December 2025</p>
+              </div>
+              <div class="edu-gpa">71<span>%</span></div>
+            </div>
+            <div class="edu-modules">
+              <p class="edu-modules-label">Notable Modules</p>
+              <div class="edu-module-tags">
+                <span>Information Security (73%)</span>
+                <span>Advanced Databases (73%)</span>
+                <span>Decision Support Systems (78%)</span>
+                <span>IT Developments (80%)</span>
+                <span>Computer Networks</span>
+                <span>System Design & Analysis</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="edu-card reveal reveal-delay-3">
+            <div class="edu-card-header">
+              <div>
+                <h3 class="edu-degree">National Senior Certificate</h3>
+                <p class="edu-institution">Phafane Secondary School</p>
+                <p class="edu-period">2021</p>
+              </div>
+            </div>
+            <div class="edu-modules">
+              <p class="edu-modules-label">Subjects</p>
+              <div class="edu-module-tags">
+                <span>Mathematics</span>
+                <span>Physical Sciences</span>
+                <span>Computer Applications Technology</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="skills" class="page-section">
+  <p class="section-eyebrow reveal">What I Work With</p>
+  <h2 class="section-title reveal reveal-delay-1">Skills</h2>
+
+  <!-- Programming & Development -->
+  <div class="sk-group reveal reveal-delay-2">
+    <h3 class="sk-group-label"><i class="fas fa-code"></i> Programming & Development</h3>
+    <div class="sk-grid">
+
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-cyan"><img src="assets/Icons/python.png" alt="Python icon"></div>
+        <div class="sk-body">
+          <h4>Python</h4>
+          <ul>
+            <li>Data handling & scripting</li>
+            <li>Logic & automation</li>
+            <li>OOP fundamentals</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-cyan"><img src="assets/Icons/Java.png" alt="Java icon"></div>
+        <div class="sk-body">
+          <h4>Java</h4>
+          <ul>
+            <li>Object-Oriented Programming</li>
+            <li>GUI applications (Apache Beans)</li>
+            <li>MySQL integration</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-gold"><img src="assets/Icons/c-sharp.png" alt="C# icon"></div>
+        <div class="sk-body">
+          <h4>C#</h4>
+          <ul>
+            <li>ASP.NET WebForms & .NET</li>
+            <li>Windows desktop apps</li>
+            <li>UI programming (Visual Studio)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-gold"><img src="assets/Icons/JavaScript.png" alt="JavaScript icon"></div>
+        <div class="sk-body">
+          <h4>JavaScript</h4>
+          <ul>
+            <li>DOM manipulation</li>
+            <li>Vanilla JS & ES6+</li>
+            <li>EmailJS & Firebase integration</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-cyan"><img src="assets/Icons/SQL Developer.png" alt="SQL & Databases icon"></div>
+        <div class="sk-body">
+          <h4>SQL & Databases</h4>
+          <ul>
+            <li>Relational database design</li>
+            <li>Queries & stored procedures</li>
+            <li>PostgreSQL, MySQL</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-cyan"><img src="assets/Icons/CSS3.png" alt="HTML & CSS icon"></div>
+        <div class="sk-body">
+          <h4>HTML & CSS</h4>
+          <ul>
+            <li>Semantic markup</li>
+            <li>Responsive layouts</li>
+            <li>Custom animations & effects</li>
+          </ul>
+        </div>
+      </article>
+
     </div>
   </div>
-</footer>
 
+  <!-- Technical Skills -->
+  <div class="sk-group reveal reveal-delay-3">
+    <h3 class="sk-group-label"><i class="fas fa-server"></i> Technical Skills</h3>
+    <div class="sk-grid">
 
-    <script src = "app.js"></script>
-    <script type="text/javascript"
-      src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-      (function(){
-        emailjs.init("tjnntPMDpcz-ycImF");
-      })();
-    </script>
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-gold"><img src="assets/Icons/global-network.png" alt="Networking icon"></div>
+        <div class="sk-body">
+          <h4>Networking</h4>
+          <ul>
+            <li>Network fundamentals (CISCO)</li>
+            <li>VLAN, DHCP, routing</li>
+            <li>Switch & firewall support</li>
+          </ul>
+        </div>
+      </article>
 
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-cyan"><img src="assets/Icons/encrypted.png" alt="IT Security icon"></div>
+        <div class="sk-body">
+          <h4>IT Security & Support</h4>
+          <ul>
+            <li>IT security awareness</li>
+            <li>First-line ICT support</li>
+            <li>Windows OS admin & troubleshooting</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-gold"><img src="assets/Icons/office.png" alt="Microsoft 365 icon"></div>
+        <div class="sk-body">
+          <h4>Microsoft 365</h4>
+          <ul>
+            <li>Admin Centre, user & licensing</li>
+            <li>Onboarding & offboarding</li>
+            <li>Teams, Outlook, Excel</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-cyan"><img src="assets/Icons/doc.png" alt="Documentation icon"></div>
+        <div class="sk-body">
+          <h4>Documentation & QMS</h4>
+          <ul>
+            <li>ISO 9001:2015 compliance records</li>
+            <li>Asset registers & ICT documentation</li>
+            <li>System & technical writing</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- Tools & Platforms -->
+  <div class="sk-group reveal reveal-delay-4">
+    <h3 class="sk-group-label"><i class="fas fa-wrench"></i> Tools & Platforms</h3>
+    <div class="sk-grid">
+
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-cyan"><img src="assets/Icons/GitHub.png" alt="GitHub icon"></div>
+        <div class="sk-body">
+          <h4>Git & GitHub</h4>
+          <ul>
+            <li>Version control & branching</li>
+            <li>GitHub Pages deployment</li>
+            <li>Collaborative workflows</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-gold"><img src="assets/Icons/Firebase.png" alt="Firebase icon"></div>
+        <div class="sk-body">
+          <h4>Firebase</h4>
+          <ul>
+            <li>Firestore real-time database</li>
+            <li>Authentication</li>
+            <li>Hosting & deployment</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-cyan"><img src="assets/Icons/React.png" alt="React icon"></div>
+        <div class="sk-body">
+          <h4>React</h4>
+          <ul>
+            <li>Component-based UI</li>
+            <li>State management (hooks)</li>
+            <li>Vite + Firebase integration</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="sk-card">
+        <div class="sk-icon sk-icon-gold"><img src="assets/Icons/computer.png" alt="System Design icon"></div>
+        <div class="sk-body">
+          <h4>System Design</h4>
+          <ul>
+            <li>ERD & use case diagrams</li>
+            <li>CISCO Packet Tracer</li>
+            <li>Agile & Scrum methodology</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- Soft Skills -->
+  <div class="sk-group reveal reveal-delay-2">
+    <h3 class="sk-group-label"><i class="fas fa-users"></i> Soft Skills</h3>
+    <div class="sk-grid sk-grid-3">
+
+      <article class="sk-card sk-card-soft">
+        <div class="sk-icon sk-icon-gold"><img src="assets/Icons/analytical-skill.png" alt="Analytical thinking icon"></div>
+        <div class="sk-body">
+          <h4>Analytical Thinking</h4>
+          <p>Evaluate problems thoroughly and consider multiple approaches before implementing solutions.</p>
+        </div>
+      </article>
+
+      <article class="sk-card sk-card-soft">
+        <div class="sk-icon sk-icon-cyan"><img src="assets/Icons/conversation.png" alt="Communication icon"></div>
+        <div class="sk-body">
+          <h4>Communication</h4>
+          <p>Clear verbal and written communication across technical and non-technical audiences.</p>
+        </div>
+      </article>
+
+      <article class="sk-card sk-card-soft">
+        <div class="sk-icon sk-icon-gold"><img src="assets/Icons/mentoring.png" alt="Peer mentoring icon"></div>
+        <div class="sk-body">
+          <h4>Peer Mentoring</h4>
+          <p>Guided junior students through debugging, concepts, and lab sessions at NWU.</p>
+        </div>
+      </article>
+
+      <article class="sk-card sk-card-soft">
+        <div class="sk-icon sk-icon-cyan"><img src="assets/Icons/doc.png" alt="Attention to detail icon"></div>
+        <div class="sk-body">
+          <h4>Attention to Detail</h4>
+          <p>Thorough in code review, documentation, and system validation across all work.</p>
+        </div>
+      </article>
+
+      <article class="sk-card sk-card-soft">
+        <div class="sk-icon sk-icon-gold"><img src="assets/Icons/computer.png" alt="Problem solving icon"></div>
+        <div class="sk-body">
+          <h4>Problem Solving</h4>
+          <p>Self-driven approach to tackling technical challenges end to end, from analysis to solution.</p>
+        </div>
+      </article>
+
+      <article class="sk-card sk-card-soft">
+        <div class="sk-icon sk-icon-cyan"><img src="assets/Icons/computer.png" alt="Time management icon"></div>
+        <div class="sk-body">
+          <h4>Time Management</h4>
+          <p>Balanced academic, assistant, and personal projects simultaneously throughout degree.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+</section>
+
+      <section id="projects" class="page-section">
+        <p class="section-eyebrow reveal">What I've Built</p>
+        <h2 class="section-title reveal reveal-delay-1">Projects</h2>
+
+        <div class="proj-showcase">
+          <div class="proj-info">
+            <div class="proj-num" id="proj-num">01</div>
+            <div class="proj-tags-row" id="proj-tags"></div>
+            <h3 class="proj-title" id="proj-title">Loading...</h3>
+            <p class="proj-desc" id="proj-desc"></p>
+            <p class="proj-stack" id="proj-stack"></p>
+            <div class="proj-actions">
+              <a id="proj-live" class="btn-primary" href="#" target="_blank" rel="noopener">
+                <i class="fas fa-external-link-alt"></i> Live Site
+              </a>
+              <a id="proj-github" class="btn-outline" href="#" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+          <div class="proj-visual">
+            <div class="proj-img-wrap" id="proj-img-wrap">
+              <img id="proj-img" src="" alt="Project preview" />
+              <div class="proj-img-overlay"></div>
+            </div>
+            <div class="proj-nav">
+              <button id="proj-prev" class="pnav-btn" aria-label="Previous"><i class="fas fa-arrow-left"></i></button>
+              <span id="proj-counter" class="pnav-counter">1 / 7</span>
+              <button id="proj-next" class="pnav-btn" aria-label="Next"><i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="proj-dots" id="proj-dots"></div>
+
+        <div class="projects-data" hidden>
+          <div class="project-card" data-title="Smart Business Registration System" data-description="A business registration and digital service platform built for streamlined admin workflows, internal records, and client-facing intake." data-stack="PHP • JavaScript • SQL • Bootstrap" data-tags="Web App|Admin|ERP" data-live="#" data-github="#" data-image="images/Projects/PCP-projectPg.png" data-hover-image="images/Projects/PCP-DB.png"></div>
+          <div class="project-card" data-title="E-Commerce Storefront" data-description="A modern online storefront for a boutique retail brand, featuring product discovery, cart flow, and clean catalogue browsing." data-stack="HTML • CSS • JavaScript • PHP" data-tags="E-Commerce|UI|Store" data-live="#" data-github="#" data-image="images/Projects/Jewel-eStore_landingPg.png" data-hover-image="images/Projects/Jewel-eStore.png"></div>
+          <div class="project-card" data-title="Network Design & Simulation" data-description="A Cisco Packet Tracer network solution that demonstrates routing, topology planning, and practical network communication design." data-stack="CISCO Packet Tracer • Networking" data-tags="Networking|CISCO|Simulation" data-live="#" data-github="#" data-image="images/Projects/packet-tracer-networking.png" data-hover-image="images/Projects/packet-tracer-networking.png"></div>
+          <div class="project-card" data-title="Online Cafe Website" data-description="A polished cafe landing website designed to showcase menus, services, location, and digital ordering experiences." data-stack="HTML • CSS • JavaScript" data-tags="Cafe|Brand|Website" data-live="#" data-github="#" data-image="images/Projects/Cafe-WelPg.png" data-hover-image="images/Projects/Cafe-WelPg.png"></div>
+          <div class="project-card" data-title="Messaging Application" data-description="A chat-style UI prototype for user authentication, profile handling, and communication flow design." data-stack="React • JavaScript • CSS" data-tags="Messaging|UI|Auth" data-live="#" data-github="#" data-image="images/Projects/messagingapp-loginPg.png" data-hover-image="images/Projects/messagingapp-loginPg.png"></div>
+          <div class="project-card" data-title="Virtual CV Portfolio" data-description="A personal portfolio experience featuring responsive UI, animated content, and an interactive single-page structure." data-stack="HTML • CSS • JavaScript" data-tags="Portfolio|UI|Personal" data-live="#" data-github="#" data-image="images/Projects/TTL-DBPg.png" data-hover-image="images/Projects/TTL-LogInPg.png"></div>
+          <div class="project-card" data-title="Database Reporting Project" data-description="A project database and administration dashboard focused on record tracking, views, and operational reporting workflows." data-stack="SQL • UI Design • Data Management" data-tags="Database|Reports|Dashboard" data-live="#" data-github="#" data-image="images/Projects/TTL-DBPg.png" data-hover-image="images/Projects/TTL-LogInPg.png"></div>
+        </div>
+      </section>
+
+      <section id="contact" class="page-section">
+        <p class="section-eyebrow reveal">Get In Touch</p>
+        <h2 class="section-title reveal reveal-delay-1">Contact Me</h2>
+        <p class="contact-intro reveal reveal-delay-2">Open to graduate roles, internships, and freelance projects. Let's talk.</p>
+
+        <div class="contact-grid">
+          <div class="contact-cards reveal reveal-delay-2">
+            <a href="mailto:phemeloshaunmakgopa@gmail.com" class="contact-card">
+              <i class="fas fa-envelope"></i>
+              <div><span class="ci-label">Email</span><span class="ci-val">phemeloshaunmakgopa@gmail.com</span></div>
+            </a>
+            <a href="tel:+27737627621" class="contact-card">
+              <i class="fas fa-phone"></i>
+              <div><span class="ci-label">Phone</span><span class="ci-val">+27 73 762 7621</span></div>
+            </a>
+            <a href="https://wa.me/27737627621" target="_blank" class="contact-card">
+              <i class="fab fa-whatsapp"></i>
+              <div><span class="ci-label">WhatsApp</span><span class="ci-val">Chat directly</span></div>
+            </a>
+            <a href="https://www.linkedin.com/in/phemelo-makgopa-838731276" target="_blank" class="contact-card">
+              <i class="fab fa-linkedin"></i>
+              <div><span class="ci-label">LinkedIn</span><span class="ci-val">phemelo-makgopa</span></div>
+            </a>
+          </div>
+
+          <form id="contact-form" class="contact-form reveal reveal-delay-3" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="from_name">Your Name</label>
+                <input type="text" id="from_name" name="from_name" placeholder="Jane Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about the opportunity..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary full-w" id="submit-btn">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer class="site-footer">
+    <p>© 2025 Phemelo Shaun Makgopa &nbsp;·&nbsp; Built with HTML, CSS & JavaScript</p>
+    <a href="https://drive.google.com/file/d/1dNFkICQ6QGuJNRX3afcY9XVJt37vkdhE/view?usp=drive_link" target="_blank" class="btn-outline" style="font-size:0.8rem;padding:0.5rem 1rem;">View Full CV</a>
+  </footer>
 </body>
 </html>
