@@ -169,6 +169,22 @@ ul { list-style: none; }
   border-color: var(--accent);
   transform: translateY(-3px);
 }
+.sidebar-socials a.social-link-linkedin:hover {
+  color: #0077B5;
+  border-color: #0077B5;
+}
+.sidebar-socials a.social-link-github:hover {
+  color: #0FBF3E;
+  border-color: rgb(7, 7, 7);
+}
+.sidebar-socials a.social-link-instagram:hover {
+  color: #E1306C;
+  border-color: #E1306C;
+}
+.sidebar-socials a.social-link-whatsapp:hover {
+  color: #075E54;
+  border-color: #075E54;
+}
 
 @media (max-width: 768px) {
   #sidebar {
@@ -821,6 +837,12 @@ ul { list-style: none; }
 }
 .contact-card:hover { border-color: var(--accent); transform: translateX(5px); }
 .contact-card i { font-size: 1rem; color: var(--accent); margin-top: 0.2rem; flex-shrink: 0; width: 18px; text-align: center; }
+.contact-card.whatsapp-contact:hover {
+  border-color: #075E54;
+}
+.contact-card.whatsapp-contact i {
+  color: #075E54;
+}
 .ci-label { display: block; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.2rem; }
 .ci-val { font-size: 0.85rem; color: var(--text); font-weight: 500; }
 
