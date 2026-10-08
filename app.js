@@ -89,6 +89,25 @@ function generateProjectDots() {
   });
 }
 
+// Shows the button only when there's a real link; a download path turns
+// the Live Site button into a file download.
+function setProjectLink(button, url, download) {
+  const target = download || url;
+  button.style.display = target && target !== '#' ? '' : 'none';
+  button.href = target || '#';
+
+  if (button !== projectLive) return;
+  if (download) {
+    button.setAttribute('download', '');
+    button.removeAttribute('target');
+    button.innerHTML = `<i class="fas fa-download"></i> Download .${download.split('.').pop()} File`;
+  } else {
+    button.removeAttribute('download');
+    button.setAttribute('target', '_blank');
+    button.innerHTML = '<i class="fas fa-external-link-alt"></i> Live Site';
+  }
+}
+
 function setProject(index) {
   if (!projectCards.length) return;
 
@@ -101,8 +120,8 @@ function setProject(index) {
   projectTitle.textContent = card.dataset.title;
   projectDesc.textContent = card.dataset.description;
   projectStack.textContent = card.dataset.stack;
-  projectLive.href = card.dataset.live || '#';
-  projectGitHub.href = card.dataset.github || '#';
+  setProjectLink(projectLive, card.dataset.live, card.dataset.download);
+  setProjectLink(projectGitHub, card.dataset.github);
   projectImg.src = card.dataset.image;
   projectImg.alt = card.dataset.title;
   projectCounter.textContent = `${index + 1} / ${projectCards.length}`;
